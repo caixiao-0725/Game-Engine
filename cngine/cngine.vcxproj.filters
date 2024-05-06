@@ -38,6 +38,12 @@
     <ClInclude Include="src\cngine\Events\MouseEvent.h">
       <Filter>cngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\cngine\Layer.h">
+      <Filter>cngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\LayerStack.h">
+      <Filter>cngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\cngine\Log.h">
       <Filter>cngine</Filter>
     </ClInclude>
@@ -54,6 +60,12 @@
     </ClCompile>
     <ClCompile Include="src\cgpch.cpp" />
     <ClCompile Include="src\cngine\Application.cpp">
+      <Filter>cngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Layer.cpp">
+      <Filter>cngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\LayerStack.cpp">
       <Filter>cngine</Filter>
     </ClCompile>
     <ClCompile Include="src\cngine\Log.cpp">

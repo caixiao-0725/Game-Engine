@@ -54,14 +54,17 @@ project 'cngine'
 
     filter 'configurations:Debug'
         defines 'CG_DEBUG'
+        buildoptions "/MDd"
         symbols 'On'
     
     filter 'configurations:Release'
         defines 'CG_RELEASE'
+        buildoptions "/MD"
         optimize 'On'
 
     filter 'configurations:Dist'
         defines 'CG_DIST'
+        buildoptions "/MD"
         optimize 'On'
 
 project 'Sandbox'
@@ -93,12 +96,15 @@ project 'Sandbox'
 
     filter 'configurations:Debug'
         defines 'CG_DEBUG'
+        buildoptions "/MDd"
         symbols 'On'
     
     filter 'configurations:Release'
         defines 'CG_RELEASE'
+        buildoptions "/MD"
         optimize 'On'
 
     filter 'configurations:Dist'
         defines 'CG_DIST'
+        buildoptions "/MD"
         optimize 'On'

@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -110,6 +111,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -137,6 +139,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -161,6 +164,8 @@
     <ClInclude Include="src\cngine\Events\Event.h" />
     <ClInclude Include="src\cngine\Events\KeyEvent.h" />
     <ClInclude Include="src\cngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\cngine\Layer.h" />
+    <ClInclude Include="src\cngine\LayerStack.h" />
     <ClInclude Include="src\cngine\Log.h" />
     <ClInclude Include="src\cngine\Window.h" />
     <ClInclude Include="src\cngine\core.h" />
@@ -171,6 +176,8 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\cngine\Application.cpp" />
+    <ClCompile Include="src\cngine\Layer.cpp" />
+    <ClCompile Include="src\cngine\LayerStack.cpp" />
     <ClCompile Include="src\cngine\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
