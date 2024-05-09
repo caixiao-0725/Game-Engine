@@ -1,15 +1,21 @@
 #include"cgpch.h"
 #include "Application.h"
 
-
 #include "cngine/Log.h"
-
-#include <GLFW/glfw3.h>
+#include "input.h"
+#include "KeyCodes.h"
+#include<glad/glad.h>
 namespace Cngine
 {
-#define CG_BIND_EVENT_FN(x) std::bind(&x,this,std::placeholders::_1)
+
+
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application()
 	{
+		CG_CORE_ASSERT(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(CG_BIND_EVENT_FN(Application::OnEvent));
 	}
@@ -21,11 +27,13 @@ namespace Cngine
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 
 	void Application::Run()
@@ -35,6 +43,10 @@ namespace Cngine
 			glClear(GL_COLOR_BUFFER_BIT);
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+			if (Input::IsKeyPressed(CG_KEY_W)) {
+				CG_CORE_TRACE("W is pressed");
+			}
+
 			m_Window->OnUpdate();
 		}
 	}
@@ -44,7 +56,7 @@ namespace Cngine
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(CG_BIND_EVENT_FN(Application::OnWindowClose));
 
-		CG_CORE_TRACE("{0}", e.ToString());
+		//CG_CORE_TRACE("{0}", e.ToString());
 
 		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin(); )
 		{

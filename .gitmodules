@@ -4,3 +4,9 @@
 [submodule "cngine/thirdparty/GLFW"]
 	path = cngine/thirdparty/GLFW
 	url = https://github.com/glfw/glfw
+[submodule "cngine/thirdparty/imgui"]
+	path = cngine/thirdparty/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "cngine/thirdparty/glm"]
+	path = cngine/thirdparty/glm
+	url = https://github.com/icaven/glm.git

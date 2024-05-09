@@ -10,8 +10,14 @@ outputdir = '%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}'
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir['GLFW'] = 'cngine/thirdparty/GLFW/include'
+IncludeDir['GLAD'] = 'cngine/thirdparty/GLAD/include'
+IncludeDir['imgui'] = 'cngine/thirdparty/imgui'
+IncludeDir['glm'] = 'cngine/thirdparty/glm'
+
 
 include 'cngine/thirdparty/GLFW'
+include 'cngine/thirdparty/GLAD'
+include 'cngine/thirdparty/imgui'
 
 
 project 'cngine'
@@ -26,15 +32,22 @@ project 'cngine'
 
     files {
         '%{prj.name}/src/**.h',
-        '%{prj.name}/src/**.cpp'
+        '%{prj.name}/src/**.cpp',
+        '%{prj.name}/thirdparty/glm/**.hpp',
+        '%{prj.name}/thirdparty/glm/**.inl'
     }
     includedirs {
         '%{prj.name}/thirdparty/spdlog/include',
         '%{prj.name}/src',
-        '%{IncludeDir.GLFW}'
+        '%{IncludeDir.GLFW}',
+        '%{IncludeDir.GLAD}',
+        '%{IncludeDir.imgui}',
+        '%{IncludeDir.glm}'
     }
     links {
         'GLFW',
+        'GLAD',
+        'imgui',
         'opengl32.lib'
     }
 
@@ -45,7 +58,8 @@ project 'cngine'
 
         defines {
             'CG_PLATFORM_WINDOWS',
-            'CG_BUILD_DLL'
+            'CG_BUILD_DLL',
+            'GLFW_INCLUDE_NONE'
         }
 
         postbuildcommands {
@@ -79,7 +93,8 @@ project 'Sandbox'
     }
     includedirs {
         'cngine/thirdparty/spdlog/include',
-        'cngine/src'
+        'cngine/src',
+        '%{IncludeDir.glm}'
     }
     links {
         'cngine'
