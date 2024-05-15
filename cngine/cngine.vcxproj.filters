@@ -22,6 +22,9 @@
     <Filter Include="src\cngine\ImGui">
       <UniqueIdentifier>{1A0D0D65-0606-2CB7-2F38-113C1B900BC3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\cngine\Renderer">
+      <UniqueIdentifier>{961560AD-0277-3DBB-8BE4-836DF744747A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="thirdparty">
       <UniqueIdentifier>{50A5DA7C-3C5D-1CCA-A564-F525913BB7BA}</UniqueIdentifier>
     </Filter>
@@ -45,10 +48,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRender.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderLoader.h">
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsInput.h">
@@ -98,6 +104,21 @@
     </ClInclude>
     <ClInclude Include="src\cngine\MouseButtonCodes.h">
       <Filter>src\cngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\Buffer.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\GraphicsContext.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\Renderer.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\Shader.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\VertexArray.h">
+      <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Window.h">
       <Filter>src\cngine</Filter>
@@ -1364,7 +1385,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRender.cpp">
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
@@ -1379,6 +1406,9 @@
     <ClCompile Include="src\cngine\Application.cpp">
       <Filter>src\cngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\cngine\ImGui\ImGuiBuild.cpp">
+      <Filter>src\cngine\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\cngine\ImGui\ImGuiLayer.cpp">
       <Filter>src\cngine\ImGui</Filter>
     </ClCompile>
@@ -1390,6 +1420,18 @@
     </ClCompile>
     <ClCompile Include="src\cngine\Log.cpp">
       <Filter>src\cngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\Buffer.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\Renderer.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\Shader.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\VertexArray.cpp">
+      <Filter>src\cngine\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,11 +2,16 @@
 
 
 #ifdef CG_PLATFORM_WINDOWS
-	#ifdef CG_BUILD_DLL
-		#define CG_API _declspec(dllexport)
+	#if CG_DYNAMIC_LINK
+		#ifdef CG_BUILD_DLL
+			#define CG_API _declspec(dllexport)
+		#else
+			#define CG_API _declspec(dllimport)
+		#endif
 	#else
-		#define CG_API _declspec(dllimport)
+		#define CG_API 
 	#endif
+
 #else
 	#error CG only supports Windows!
 #endif

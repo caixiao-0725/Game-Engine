@@ -22,8 +22,11 @@ include 'cngine/thirdparty/imgui'
 
 project 'cngine'
     location 'cngine'
-    kind 'SharedLib'
+    kind 'StaticLib'
     language 'C++'
+    cppdialect 'C++17'
+    staticruntime 'On'
+
     targetdir('bin/' .. outputdir .. '/%{prj.name}')
     objdir('bin-int/' .. outputdir .. '/%{prj.name}')
 
@@ -35,6 +38,11 @@ project 'cngine'
         '%{prj.name}/src/**.cpp',
         '%{prj.name}/thirdparty/glm/**.hpp',
         '%{prj.name}/thirdparty/glm/**.inl'
+    }
+
+    defines
+    {
+        '_CRT_SECURE_NO_WARNINGS'
     }
     includedirs {
         '%{prj.name}/thirdparty/spdlog/include',
@@ -52,7 +60,6 @@ project 'cngine'
     }
 
     filter 'system:windows'
-        cppdialect 'C++17'
         staticruntime 'On'
         systemversion 'latest'
 
@@ -61,10 +68,7 @@ project 'cngine'
             'CG_BUILD_DLL',
             'GLFW_INCLUDE_NONE'
         }
-
-        postbuildcommands {
-            ('{COPY} %{cfg.buildtarget.relpath} ../bin/' .. outputdir .. '/Sandbox')
-        }
+ 
 
     filter 'configurations:Debug'
         defines 'CG_DEBUG'
@@ -94,7 +98,8 @@ project 'Sandbox'
     includedirs {
         'cngine/thirdparty/spdlog/include',
         'cngine/src',
-        '%{IncludeDir.glm}'
+        '%{IncludeDir.glm}',
+        "cngine/thirdparty",
     }
     links {
         'cngine'

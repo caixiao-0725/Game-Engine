@@ -1,5 +1,5 @@
 #include <cngine.h>
-
+//#include "imgui/imgui.h"
 class ExampleLayer : public Cngine::Layer
 {
 public:
@@ -17,12 +17,17 @@ public:
 	{
 		//CG_TRACE("{0}", event.ToString());
 	}
+	//virtual void OnImGuiRender() override
+	//{
+	//	ImGui::Begin("Test");
+	//	ImGui::Text("Hello World");
+	//	ImGui::End();
+	//}
 };
 class Sandbox: public Cngine::Application {
 public:
 	Sandbox() {
 		PushLayer(new ExampleLayer());
-		PushLayer(new Cngine::ImGuiLayer());
 	}
 
 	~Sandbox() {
