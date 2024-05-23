@@ -13,7 +13,7 @@ IncludeDir['GLFW'] = 'cngine/thirdparty/GLFW/include'
 IncludeDir['GLAD'] = 'cngine/thirdparty/GLAD/include'
 IncludeDir['imgui'] = 'cngine/thirdparty/imgui'
 IncludeDir['glm'] = 'cngine/thirdparty/glm'
-
+IncludeDir["stb_image"] = "cngine/thirdparty/stb_image"
 
 include 'cngine/thirdparty/GLFW'
 include 'cngine/thirdparty/GLAD'
@@ -37,7 +37,9 @@ project 'cngine'
         '%{prj.name}/src/**.h',
         '%{prj.name}/src/**.cpp',
         '%{prj.name}/thirdparty/glm/**.hpp',
-        '%{prj.name}/thirdparty/glm/**.inl'
+        '%{prj.name}/thirdparty/glm/**.inl',
+        "%{prj.name}/thirdparty/stb_image/**.h",
+		"%{prj.name}/thirdparty/stb_image/**.cpp",
     }
 
     defines
@@ -50,7 +52,8 @@ project 'cngine'
         '%{IncludeDir.GLFW}',
         '%{IncludeDir.GLAD}',
         '%{IncludeDir.imgui}',
-        '%{IncludeDir.glm}'
+        '%{IncludeDir.glm}',
+        "%{IncludeDir.stb_image}"
     }
     links {
         'GLFW',

@@ -2,6 +2,7 @@
 
 #include "cngine/core.h"
 #include "cngine/Events/Event.h"
+#include "cngine/Core/Timestep.h"
 
 namespace Cngine {
 
@@ -13,7 +14,7 @@ namespace Cngine {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnEvent(Event& event) {}
 		virtual void OnImGuiRender() {}
 

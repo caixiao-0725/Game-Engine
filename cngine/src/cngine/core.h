@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 
 #ifdef CG_PLATFORM_WINDOWS
 	#if CG_DYNAMIC_LINK
@@ -27,3 +28,13 @@
 #define BIT(x) (1 << x)
 
 #define CG_BIND_EVENT_FN(x) std::bind(&x,this,std::placeholders::_1)
+
+namespace Cngine {
+
+	template<typename T>
+	using Scope = std::unique_ptr<T>;
+
+	template<typename T>
+	using Ref = std::shared_ptr<T>;
+
+}

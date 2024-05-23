@@ -16,6 +16,9 @@
     <Filter Include="src\cngine">
       <UniqueIdentifier>{F0632D54-DC1B-6FA1-4523-48FD31FA0992}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\cngine\Core">
+      <UniqueIdentifier>{487E521A-B409-C0DE-BD1A-43D329251CDF}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\cngine\Events">
       <UniqueIdentifier>{D4410DFE-4058-0B94-89CF-96B5F524DC1B}</UniqueIdentifier>
     </Filter>
@@ -46,12 +49,24 @@
     <Filter Include="thirdparty\glm\glm\gtx">
       <UniqueIdentifier>{D02B9BF1-BC25-C443-A592-5A54912B2AB0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="thirdparty\stb_image">
+      <UniqueIdentifier>{EA39E0BF-D6C8-6989-7FE7-7D846B557A2F}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
@@ -71,6 +86,9 @@
     </ClInclude>
     <ClInclude Include="src\cngine\Application.h">
       <Filter>src\cngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\Timestep.h">
+      <Filter>src\cngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\EntryPoint.h">
       <Filter>src\cngine</Filter>
@@ -111,10 +129,22 @@
     <ClInclude Include="src\cngine\Renderer\GraphicsContext.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\OrthographicCamera.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\RenderCommand.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\cngine\Renderer\Renderer.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\RendererAPI.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\cngine\Renderer\Shader.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\Texture.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Renderer\VertexArray.h">
@@ -1383,12 +1413,24 @@
     <ClInclude Include="thirdparty\glm\glm\vector_relational.hpp">
       <Filter>thirdparty\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="thirdparty\stb_image\stb_image.h">
+      <Filter>thirdparty\stb_image</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLTexture.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp">
@@ -1424,14 +1466,29 @@
     <ClCompile Include="src\cngine\Renderer\Buffer.cpp">
       <Filter>src\cngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\OrthographicCamera.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\RenderCommand.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\cngine\Renderer\Renderer.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\RendererAPI.cpp">
       <Filter>src\cngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\cngine\Renderer\Shader.cpp">
       <Filter>src\cngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\Texture.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\cngine\Renderer\VertexArray.cpp">
       <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\stb_image\stb_image.cpp">
+      <Filter>thirdparty\stb_image</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

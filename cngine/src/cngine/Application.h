@@ -5,18 +5,14 @@
 #include "cngine/Events/ApplicationEvent.h"
 
 #include "cngine/LayerStack.h"
-#include "cngine\ImGui\ImGuiLayer.h"
+#include "cngine/ImGui\ImGuiLayer.h"
 
-#include "cngine/Renderer/Shader.h"
-
-#include "cngine/Renderer/Buffer.h"
-
-#include "cngine/Renderer/VertexArray.h"
+#include "cngine/Core/Timestep.h"
 
 namespace Cngine {
 
 
-	class CG_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -41,12 +37,7 @@ namespace Cngine {
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};
