@@ -1,11 +1,11 @@
 #pragma once
 #include "core.h"
-#include "Events/Event.h"
+#include "cngine/Events/Event.h"
 #include "Window.h"
 #include "cngine/Events/ApplicationEvent.h"
 
-#include "cngine/LayerStack.h"
-#include "cngine/ImGui\ImGuiLayer.h"
+#include "cngine/Core/LayerStack.h"
+#include "cngine/ImGui/ImGuiLayer.h"
 
 #include "cngine/Core/Timestep.h"
 

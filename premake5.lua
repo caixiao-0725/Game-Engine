@@ -67,7 +67,6 @@ project 'cngine'
         systemversion 'latest'
 
         defines {
-            'CG_PLATFORM_WINDOWS',
             'CG_BUILD_DLL',
             'GLFW_INCLUDE_NONE'
         }
@@ -112,10 +111,6 @@ project 'Sandbox'
         cppdialect 'C++17'
         staticruntime 'On'
         systemversion 'latest'
-
-        defines {
-            'CG_PLATFORM_WINDOWS'
-        }
 
     filter 'configurations:Debug'
         defines 'CG_DEBUG'

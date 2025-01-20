@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Cngine/Input.h"
+#include "Cngine/Core/Input.h"
 
 namespace Cngine {
 

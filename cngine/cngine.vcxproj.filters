@@ -84,14 +84,38 @@
     <ClInclude Include="src\cngine.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\cngine\Application.h">
-      <Filter>src\cngine</Filter>
+    <ClInclude Include="src\cngine\Core\Application.h">
+      <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\EntryPoint.h">
+      <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\KeyCodes.h">
+      <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\Layer.h">
+      <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\LayerStack.h">
+      <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\Log.h">
+      <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\MouseButtonCodes.h">
+      <Filter>src\cngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Core\Timestep.h">
       <Filter>src\cngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\cngine\EntryPoint.h">
-      <Filter>src\cngine</Filter>
+    <ClInclude Include="src\cngine\Core\Window.h">
+      <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\core.h">
+      <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Core\input.h">
+      <Filter>src\cngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Events\ApplicationEvent.h">
       <Filter>src\cngine\Events</Filter>
@@ -108,21 +132,6 @@
     <ClInclude Include="src\cngine\ImGui\ImGuiLayer.h">
       <Filter>src\cngine\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\cngine\KeyCodes.h">
-      <Filter>src\cngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cngine\Layer.h">
-      <Filter>src\cngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cngine\LayerStack.h">
-      <Filter>src\cngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cngine\Log.h">
-      <Filter>src\cngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cngine\MouseButtonCodes.h">
-      <Filter>src\cngine</Filter>
-    </ClInclude>
     <ClInclude Include="src\cngine\Renderer\Buffer.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
@@ -132,10 +141,16 @@
     <ClInclude Include="src\cngine\Renderer\OrthographicCamera.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\OrthographicCameraController.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\cngine\Renderer\RenderCommand.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Renderer\Renderer.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\Renderer2D.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Renderer\RendererAPI.h">
@@ -149,18 +164,6 @@
     </ClInclude>
     <ClInclude Include="src\cngine\Renderer\VertexArray.h">
       <Filter>src\cngine\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cngine\Window.h">
-      <Filter>src\cngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cngine\core.h">
-      <Filter>src\cngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cngine\ff.h">
-      <Filter>src\cngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cngine\input.h">
-      <Filter>src\cngine</Filter>
     </ClInclude>
     <ClInclude Include="thirdparty\glm\glm\common.hpp">
       <Filter>thirdparty\glm\glm</Filter>
@@ -1445,8 +1448,17 @@
     <ClCompile Include="src\cgpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\cngine\Application.cpp">
-      <Filter>src\cngine</Filter>
+    <ClCompile Include="src\cngine\Core\Application.cpp">
+      <Filter>src\cngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Core\Layer.cpp">
+      <Filter>src\cngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Core\LayerStack.cpp">
+      <Filter>src\cngine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Core\Log.cpp">
+      <Filter>src\cngine\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\cngine\ImGui\ImGuiBuild.cpp">
       <Filter>src\cngine\ImGui</Filter>
@@ -1454,25 +1466,22 @@
     <ClCompile Include="src\cngine\ImGui\ImGuiLayer.cpp">
       <Filter>src\cngine\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\cngine\Layer.cpp">
-      <Filter>src\cngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cngine\LayerStack.cpp">
-      <Filter>src\cngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\cngine\Log.cpp">
-      <Filter>src\cngine</Filter>
-    </ClCompile>
     <ClCompile Include="src\cngine\Renderer\Buffer.cpp">
       <Filter>src\cngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\cngine\Renderer\OrthographicCamera.cpp">
       <Filter>src\cngine\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\OrthographicCameraController.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\cngine\Renderer\RenderCommand.cpp">
       <Filter>src\cngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\cngine\Renderer\Renderer.cpp">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Renderer\Renderer2D.cpp">
       <Filter>src\cngine\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\cngine\Renderer\RendererAPI.cpp">

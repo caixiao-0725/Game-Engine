@@ -2,19 +2,21 @@
 
 // For use by CG applications
 
-#include "cngine\Application.h"
-#include "cngine\Layer.h"
-#include "cngine\Log.h"
+#include "cngine/Core/Application.h"
+#include "cngine/Core/Layer.h"
+#include "cngine/Core/Log.h"
 
 #include "cngine/Core/Timestep.h"
-#include "cngine\input.h"
-#include "cngine\KeyCodes.h"
-#include "cngine\MouseButtonCodes.h"
+#include "cngine/Core/input.h"
+#include "cngine/Core/KeyCodes.h"
+#include "cngine/Core/MouseButtonCodes.h"
+#include "cngine/Renderer/OrthographicCameraController.h"
 
 #include "cngine\ImGui\ImGuiLayer.h"
 
 // ---Renderer------------------------
 #include "cngine/Renderer/Renderer.h"
+#include "cngine/Renderer/Renderer2D.h"
 #include "cngine/Renderer/RenderCommand.h"
 
 #include "cngine/Renderer/Buffer.h"
@@ -25,6 +27,3 @@
 #include "cngine/Renderer/OrthographicCamera.h"
 
 // -----------------------------------
-//-------Entry Point ----------
-#include "cngine\EntryPoint.h"
-//----------------------------

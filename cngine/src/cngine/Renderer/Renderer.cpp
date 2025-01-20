@@ -1,13 +1,15 @@
 #include "cgpch.h"
 #include "Renderer.h"
+#include "Renderer2D.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 namespace Cngine {
 
-	Renderer::SceneData* Renderer::m_SceneData = new Renderer::SceneData;
+	Scope<Renderer::SceneData> Renderer::m_SceneData = CreateScope<Renderer::SceneData>();
 
 	void Renderer::Init()
 	{
 		RenderCommand::Init();
+		Renderer2D::Init();
 	}
 
 

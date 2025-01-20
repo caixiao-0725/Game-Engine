@@ -3,13 +3,15 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include "imgui/imgui.h"
+#include "SandBox2D.h"
+#include "cngine/Core/EntryPoint.h"
 class ExampleLayer : public Cngine::Layer
 {
 public:
 	ExampleLayer()
 		: Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
 	{
-		m_VertexArray.reset(Cngine::VertexArray::Create());
+		m_VertexArray = Cngine::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 0.8f, 0.2f, 0.8f, 1.0f,
@@ -31,7 +33,7 @@ public:
 		indexBuffer.reset(Cngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(Cngine::VertexArray::Create());
+		m_SquareVA = Cngine::VertexArray::Create();
 
 		float squareVertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -88,7 +90,7 @@ public:
 			}
 		)";
 
-		m_Shader.reset(Cngine::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader=Cngine::Shader::Create(vertexSrc, fragmentSrc);
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -126,7 +128,7 @@ public:
 			}
 		)";
 
-		m_FlatColorShader.reset(Cngine::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader=Cngine::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
 
 		std::string textureShaderVertexSrc = R"(
@@ -157,7 +159,7 @@ public:
 			}
 		)";
 
-		m_TextureShader.reset(Cngine::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
+		m_TextureShader = Cngine::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc);
 		m_Texture =	Cngine::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_ChernoLogoTexture = Cngine::Texture2D::Create("assets/textures/ChernoLogo.png");
 
@@ -246,7 +248,8 @@ private:
 class Sandbox: public Cngine::Application {
 public:
 	Sandbox() {
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 
 	~Sandbox() {

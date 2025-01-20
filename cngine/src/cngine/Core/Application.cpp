@@ -1,10 +1,10 @@
 #include"cgpch.h"
 #include "Application.h"
 
-#include "cngine/Log.h"
+#include "cngine/Core/Log.h"
 #include "input.h"
 #include "KeyCodes.h"
-#include "Renderer/Renderer.h"
+#include "Cngine/Renderer/Renderer.h"
 
 #include <glfw/glfw3.h>
 namespace Cngine

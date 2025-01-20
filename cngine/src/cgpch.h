@@ -6,13 +6,14 @@
 #include <algorithm>
 #include <functional>
 
+#include <array>
 #include <string>
 #include <sstream>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
 
-#include "cngine/Log.h"
+#include "cngine/Core/Log.h"
 
 
 #ifdef CG_PLATFORM_WINDOWS

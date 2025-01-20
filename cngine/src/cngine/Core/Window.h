@@ -1,7 +1,7 @@
 #pragma once
 
 #include "cgpch.h"
-#include "cngine/core.h"
+#include "cngine/Core/core.h"
 #include "cngine/Events/Event.h"
 
 

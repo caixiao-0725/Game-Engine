@@ -1,6 +1,6 @@
 #pragma once
 
-#include "cngine/core.h"
+#include "cngine/Core/core.h"
 #include "cngine/Events/Event.h"
 #include "cngine/Core/Timestep.h"
 

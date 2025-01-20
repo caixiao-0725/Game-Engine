@@ -76,7 +76,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CG_PLATFORM_WINDOWS;CG_BUILD_DLL;GLFW_INCLUDE_NONE;CG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CG_BUILD_DLL;GLFW_INCLUDE_NONE;CG_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>thirdparty\spdlog\include;src;thirdparty\GLFW\include;thirdparty\GLAD\include;thirdparty\imgui;thirdparty\glm;thirdparty\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -98,7 +98,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CG_PLATFORM_WINDOWS;CG_BUILD_DLL;GLFW_INCLUDE_NONE;CG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CG_BUILD_DLL;GLFW_INCLUDE_NONE;CG_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>thirdparty\spdlog\include;src;thirdparty\GLFW\include;thirdparty\GLAD\include;thirdparty\imgui;thirdparty\glm;thirdparty\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -124,7 +124,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>cgpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CG_PLATFORM_WINDOWS;CG_BUILD_DLL;GLFW_INCLUDE_NONE;CG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;CG_BUILD_DLL;GLFW_INCLUDE_NONE;CG_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>thirdparty\spdlog\include;src;thirdparty\GLFW\include;thirdparty\GLAD\include;thirdparty\imgui;thirdparty\glm;thirdparty\stb_image;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -156,32 +156,33 @@
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cgpch.h" />
     <ClInclude Include="src\cngine.h" />
-    <ClInclude Include="src\cngine\Application.h" />
+    <ClInclude Include="src\cngine\Core\Application.h" />
+    <ClInclude Include="src\cngine\Core\EntryPoint.h" />
+    <ClInclude Include="src\cngine\Core\KeyCodes.h" />
+    <ClInclude Include="src\cngine\Core\Layer.h" />
+    <ClInclude Include="src\cngine\Core\LayerStack.h" />
+    <ClInclude Include="src\cngine\Core\Log.h" />
+    <ClInclude Include="src\cngine\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\cngine\Core\Timestep.h" />
-    <ClInclude Include="src\cngine\EntryPoint.h" />
+    <ClInclude Include="src\cngine\Core\Window.h" />
+    <ClInclude Include="src\cngine\Core\core.h" />
+    <ClInclude Include="src\cngine\Core\input.h" />
     <ClInclude Include="src\cngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\cngine\Events\Event.h" />
     <ClInclude Include="src\cngine\Events\KeyEvent.h" />
     <ClInclude Include="src\cngine\Events\MouseEvent.h" />
     <ClInclude Include="src\cngine\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\cngine\KeyCodes.h" />
-    <ClInclude Include="src\cngine\Layer.h" />
-    <ClInclude Include="src\cngine\LayerStack.h" />
-    <ClInclude Include="src\cngine\Log.h" />
-    <ClInclude Include="src\cngine\MouseButtonCodes.h" />
     <ClInclude Include="src\cngine\Renderer\Buffer.h" />
     <ClInclude Include="src\cngine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\cngine\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\cngine\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\cngine\Renderer\RenderCommand.h" />
     <ClInclude Include="src\cngine\Renderer\Renderer.h" />
+    <ClInclude Include="src\cngine\Renderer\Renderer2D.h" />
     <ClInclude Include="src\cngine\Renderer\RendererAPI.h" />
     <ClInclude Include="src\cngine\Renderer\Shader.h" />
     <ClInclude Include="src\cngine\Renderer\Texture.h" />
     <ClInclude Include="src\cngine\Renderer\VertexArray.h" />
-    <ClInclude Include="src\cngine\Window.h" />
-    <ClInclude Include="src\cngine\core.h" />
-    <ClInclude Include="src\cngine\ff.h" />
-    <ClInclude Include="src\cngine\input.h" />
     <ClInclude Include="thirdparty\glm\glm\common.hpp" />
     <ClInclude Include="thirdparty\glm\glm\detail\_features.hpp" />
     <ClInclude Include="thirdparty\glm\glm\detail\_fixes.hpp" />
@@ -613,16 +614,18 @@
     <ClCompile Include="src\cgpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\cngine\Application.cpp" />
+    <ClCompile Include="src\cngine\Core\Application.cpp" />
+    <ClCompile Include="src\cngine\Core\Layer.cpp" />
+    <ClCompile Include="src\cngine\Core\LayerStack.cpp" />
+    <ClCompile Include="src\cngine\Core\Log.cpp" />
     <ClCompile Include="src\cngine\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\cngine\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\cngine\Layer.cpp" />
-    <ClCompile Include="src\cngine\LayerStack.cpp" />
-    <ClCompile Include="src\cngine\Log.cpp" />
     <ClCompile Include="src\cngine\Renderer\Buffer.cpp" />
     <ClCompile Include="src\cngine\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\cngine\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\cngine\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\cngine\Renderer\Renderer.cpp" />
+    <ClCompile Include="src\cngine\Renderer\Renderer2D.cpp" />
     <ClCompile Include="src\cngine\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\cngine\Renderer\Shader.cpp" />
     <ClCompile Include="src\cngine\Renderer\Texture.cpp" />
