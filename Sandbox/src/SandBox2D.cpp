@@ -6,6 +6,8 @@
 
 #include "Platform/OpenGL/OpenGLShader.h"
 
+#include <chrono>
+
 Sandbox2D::Sandbox2D()
 	: Layer("Sandbox2D"), m_CameraController(1280.0f / 720.0f)
 {
@@ -22,21 +24,31 @@ void Sandbox2D::OnDetach()
 
 void Sandbox2D::OnUpdate(Cngine::Timestep ts)
 {
+	CG_PROFILE_FUNCTION();
 	// Update
 	m_CameraController.OnUpdate(ts);
-	// Render
-	Cngine::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
-	Cngine::RenderCommand::Clear();
-
-	Cngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
-	Cngine::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
-	Cngine::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
-	Cngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
-	Cngine::Renderer2D::EndScene();
+	{
+		CG_PROFILE_SCOPE("CameraController::OnUpdate");
+		m_CameraController.OnUpdate(ts);
+	}
+	{
+		CG_PROFILE_SCOPE("Renderer Prep");
+		Cngine::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
+		Cngine::RenderCommand::Clear();
+	}
+	{
+		CG_PROFILE_SCOPE("Renderer Draw");
+		Cngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
+		Cngine::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+		Cngine::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
+		Cngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
+		Cngine::Renderer2D::EndScene();
+	}
 }
 
 void Sandbox2D::OnImGuiRender()
 {
+	CG_PROFILE_FUNCTION();
 	ImGui::Begin("Settings");
 	ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
 	ImGui::End();

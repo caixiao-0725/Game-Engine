@@ -12,7 +12,8 @@
 #include "cngine/Core/MouseButtonCodes.h"
 #include "cngine/Renderer/OrthographicCameraController.h"
 
-#include "cngine\ImGui\ImGuiLayer.h"
+#include "cngine/ImGui/ImGuiLayer.h"
+#include "cngine/Debug/Instrumentor.h"
 
 // ---Renderer------------------------
 #include "cngine/Renderer/Renderer.h"

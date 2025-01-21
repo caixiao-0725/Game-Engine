@@ -167,6 +167,7 @@
     <ClInclude Include="src\cngine\Core\Window.h" />
     <ClInclude Include="src\cngine\Core\core.h" />
     <ClInclude Include="src\cngine\Core\input.h" />
+    <ClInclude Include="src\cngine\Debug\Instrumentor.h" />
     <ClInclude Include="src\cngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\cngine\Events\Event.h" />
     <ClInclude Include="src\cngine\Events\KeyEvent.h" />

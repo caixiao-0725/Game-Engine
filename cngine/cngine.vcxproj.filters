@@ -19,6 +19,9 @@
     <Filter Include="src\cngine\Core">
       <UniqueIdentifier>{487E521A-B409-C0DE-BD1A-43D329251CDF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\cngine\Debug">
+      <UniqueIdentifier>{66A2AE64-529B-CDB6-7BCD-B23B6725ADC2}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\cngine\Events">
       <UniqueIdentifier>{D4410DFE-4058-0B94-89CF-96B5F524DC1B}</UniqueIdentifier>
     </Filter>
@@ -116,6 +119,9 @@
     </ClInclude>
     <ClInclude Include="src\cngine\Core\input.h">
       <Filter>src\cngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Debug\Instrumentor.h">
+      <Filter>src\cngine\Debug</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Events\ApplicationEvent.h">
       <Filter>src\cngine\Events</Filter>
