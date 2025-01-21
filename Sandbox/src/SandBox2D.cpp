@@ -41,7 +41,7 @@ void Sandbox2D::OnUpdate(Cngine::Timestep ts)
 		Cngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
 		Cngine::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
 		Cngine::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
-		Cngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
+		//Cngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
 		Cngine::Renderer2D::EndScene();
 	}
 }

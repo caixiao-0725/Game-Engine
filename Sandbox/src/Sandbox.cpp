@@ -19,8 +19,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
 		};
 
-		Cngine::Ref<Cngine::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Cngine::VertexBuffer::Create(vertices, sizeof(vertices)));
+		Cngine::Ref<Cngine::VertexBuffer> vertexBuffer = Cngine::VertexBuffer::Create(vertices, sizeof(vertices));
 		Cngine::BufferLayout layout = {
 			{ Cngine::ShaderDataType::Float3, "a_Position" },
 			{ Cngine::ShaderDataType::Float4, "a_Color" }
@@ -42,8 +41,7 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		Cngine::Ref<Cngine::VertexBuffer> squareVB;
-		squareVB.reset(Cngine::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		Cngine::Ref<Cngine::VertexBuffer> squareVB = Cngine::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 		squareVB->SetLayout({
 			{ Cngine::ShaderDataType::Float3, "a_Position" },
 			{ Cngine::ShaderDataType::Float2, "a_TexCoord" }
