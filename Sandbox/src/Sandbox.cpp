@@ -28,8 +28,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		Cngine::Ref<Cngine::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Cngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		Cngine::Ref<Cngine::IndexBuffer> indexBuffer=Cngine::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 		m_SquareVA = Cngine::VertexArray::Create();
@@ -49,8 +48,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareVB);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		Cngine::Ref<Cngine::IndexBuffer> squareIB;
-		squareIB.reset(Cngine::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		Cngine::Ref<Cngine::IndexBuffer> squareIB = Cngine::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)); 
 		m_SquareVA->SetIndexBuffer(squareIB);
 
 		std::string vertexSrc = R"(

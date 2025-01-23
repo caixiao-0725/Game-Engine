@@ -41,7 +41,7 @@ void Sandbox2D::OnUpdate(Cngine::Timestep ts)
 		Cngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
 		Cngine::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
 		Cngine::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
-		//Cngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
+		Cngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
 		Cngine::Renderer2D::EndScene();
 	}
 }
@@ -49,9 +49,18 @@ void Sandbox2D::OnUpdate(Cngine::Timestep ts)
 void Sandbox2D::OnImGuiRender()
 {
 	CG_PROFILE_FUNCTION();
-	ImGui::Begin("Settings");
-	ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
-	ImGui::End();
+	
+		ImGui::Begin("Settings");
+		//auto stats = Hazel::Renderer2D::GetStats();
+		//ImGui::Text("Renderer2D Stats:");
+		//ImGui::Text("Draw Calls: %d", stats.DrawCalls);
+		//ImGui::Text("Quads: %d", stats.QuadCount);
+		//ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
+		//ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
+		ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
+		uint32_t textureID = m_CheckerboardTexture->GetRendererID();
+		ImGui::Image((void*)textureID, ImVec2{ 1280, 720 });
+		ImGui::End();
 }
 
 void Sandbox2D::OnEvent(Cngine::Event& e)

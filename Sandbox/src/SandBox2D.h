@@ -21,6 +21,7 @@ private:
 	Cngine::Ref<Cngine::VertexArray> m_SquareVA;
 	Cngine::Ref<Cngine::Shader> m_FlatColorShader;
 	Cngine::Ref<Cngine::Texture2D> m_CheckerboardTexture;
+
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };
 
 };

@@ -19,9 +19,14 @@ namespace Cngine {
 	}
 
 
-	Window* Window::Create(const WindowProps& props)
+	Scope<Window> Window::Create(const WindowProps& props)
 	{
-		return new WindowsWindow(props);
+#ifdef CG_PLATFORM_WINDOWS
+		return CreateScope<WindowsWindow>(props);
+#else
+		CG_CORE_ASSERT(false, "Unknown platform!");
+		return nullptr;
+#endif
 	}
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
@@ -46,7 +51,7 @@ namespace Cngine {
 		{
 			CG_CORE_INFO("Initializing GLFW");
 			int success = glfwInit();
-			CG_CORE_ASSERT(success, "Could not intialize GLFW!");
+			CG_CORE_ASSERT(success, "Could not initialize GLFW!");
 
 			glfwSetErrorCallback(GLFWErrorCallback);
 		}

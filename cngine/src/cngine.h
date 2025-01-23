@@ -22,6 +22,8 @@
 
 #include "cngine/Renderer/Buffer.h"
 #include "cngine/Renderer/Shader.h"
+#include "cngine/Renderer/Framebuffer.h"
+
 #include "cngine/Renderer/VertexArray.h"
 #include "cngine/Renderer/Texture.h"
 

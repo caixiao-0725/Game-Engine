@@ -1,5 +1,6 @@
 workspace 'cngine'
     architecture 'x86_64'
+    startproject "cngine-Editor"
     configurations {
         'Debug',
         'Release',
@@ -126,3 +127,43 @@ project 'Sandbox'
         defines 'CG_DIST'
         buildoptions "/MD"
         optimize 'On'
+
+project "cngine-Editor"
+    location "cngine-Editor"
+    kind "ConsoleApp"
+    language "C++"
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+    files
+    {
+        "%{prj.name}/src/**.h",
+        "%{prj.name}/src/**.cpp"
+    }
+    includedirs
+    {
+        "cngine/thirdparty/spdlog/include",
+        "cngine/src",
+        "cngine/thirdparty",
+        "%{IncludeDir.glm}"
+    }
+    links
+    {
+        "cngine"
+    }
+    filter "system:windows"
+        systemversion "latest"
+        cppdialect "C++17"
+        staticruntime "On"
+            
+    filter "configurations:Debug"
+        defines "CG_DEBUG"
+        buildoptions "/MDd"
+        symbols "On"
+    filter "configurations:Release"
+        defines "CG_RELEASE"
+        buildoptions "/MD"
+        optimize "On"
+    filter "configurations:Dist"
+        defines "CG_DIST"
+        buildoptions "/MD"
+        optimize "On"
