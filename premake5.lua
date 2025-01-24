@@ -15,6 +15,7 @@ IncludeDir['GLAD'] = 'cngine/thirdparty/GLAD/include'
 IncludeDir['imgui'] = 'cngine/thirdparty/imgui'
 IncludeDir['glm'] = 'cngine/thirdparty/glm'
 IncludeDir["stb_image"] = "cngine/thirdparty/stb_image"
+IncludeDir["entt"] = "cngine/thirdparty/entt/include"
 
 include 'cngine/thirdparty/GLFW'
 include 'cngine/thirdparty/GLAD'
@@ -54,7 +55,8 @@ project 'cngine'
         '%{IncludeDir.GLAD}',
         '%{IncludeDir.imgui}',
         '%{IncludeDir.glm}',
-        "%{IncludeDir.stb_image}"
+        "%{IncludeDir.stb_image}",
+        "%{IncludeDir.entt}",
     }
     links {
         'GLFW',
@@ -103,6 +105,7 @@ project 'Sandbox'
         'cngine/src',
         '%{IncludeDir.glm}',
         "cngine/thirdparty",
+        "%{IncludeDir.entt}",
     }
     links {
         'cngine'
@@ -144,7 +147,8 @@ project "cngine-Editor"
         "cngine/thirdparty/spdlog/include",
         "cngine/src",
         "cngine/thirdparty",
-        "%{IncludeDir.glm}"
+        "%{IncludeDir.glm}",
+        "%{IncludeDir.entt}"
     }
     links
     {

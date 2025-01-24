@@ -31,6 +31,9 @@
     <Filter Include="src\cngine\Renderer">
       <UniqueIdentifier>{961560AD-0277-3DBB-8BE4-836DF744747A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\cngine\Scene">
+      <UniqueIdentifier>{0D05BD65-F9FD-DBB7-2230-C13C0E88BBC3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="thirdparty">
       <UniqueIdentifier>{50A5DA7C-3C5D-1CCA-A564-F525913BB7BA}</UniqueIdentifier>
     </Filter>
@@ -78,9 +81,6 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
-      <Filter>src\Platform\Windows</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>src\Platform\Windows</Filter>
     </ClInclude>
@@ -108,7 +108,7 @@
     <ClInclude Include="src\cngine\Core\Log.h">
       <Filter>src\cngine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\cngine\Core\MouseButtonCodes.h">
+    <ClInclude Include="src\cngine\Core\MouseCodes.h">
       <Filter>src\cngine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Core\Timestep.h">
@@ -176,6 +176,15 @@
     </ClInclude>
     <ClInclude Include="src\cngine\Renderer\VertexArray.h">
       <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Scene\Components.h">
+      <Filter>src\cngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Scene\Entity.h">
+      <Filter>src\cngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Scene\Scene.h">
+      <Filter>src\cngine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="thirdparty\glm\glm\common.hpp">
       <Filter>thirdparty\glm\glm</Filter>
@@ -1513,6 +1522,12 @@
     </ClCompile>
     <ClCompile Include="src\cngine\Renderer\VertexArray.cpp">
       <Filter>src\cngine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Scene\Entity.cpp">
+      <Filter>src\cngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Scene\Scene.cpp">
+      <Filter>src\cngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="thirdparty\stb_image\stb_image.cpp">
       <Filter>thirdparty\stb_image</Filter>

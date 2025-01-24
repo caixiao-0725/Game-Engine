@@ -181,7 +181,10 @@ namespace Cngine {
 
 #define CG_PROFILE_BEGIN_SESSION(name, filepath) ::Cngine::Instrumentor::Get().BeginSession(name, filepath)
 #define CG_PROFILE_END_SESSION() ::Cngine::Instrumentor::Get().EndSession()
-#define CG_PROFILE_SCOPE(name) ::Cngine::InstrumentationTimer timer##__LINE__(name);
+#define CG_PROFILE_SCOPE_LINE2(name, line) constexpr auto fixedName##line = ::Cngine::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
+											   ::Cngine::InstrumentationTimer timer##line(fixedName##line.Data)
+#define CG_PROFILE_SCOPE_LINE(name, line) CG_PROFILE_SCOPE_LINE2(name, line)
+#define CG_PROFILE_SCOPE(name) CG_PROFILE_SCOPE_LINE(name, __LINE__)
 #define CG_PROFILE_FUNCTION() CG_PROFILE_SCOPE(CG_FUNC_SIG)
 #else
 #define CG_PROFILE_BEGIN_SESSION(name, filepath)

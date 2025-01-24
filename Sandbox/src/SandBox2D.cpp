@@ -25,6 +25,7 @@ void Sandbox2D::OnDetach()
 void Sandbox2D::OnUpdate(Cngine::Timestep ts)
 {
 	CG_PROFILE_FUNCTION();
+	Cngine::Renderer2D::ResetStats();
 	// Update
 	m_CameraController.OnUpdate(ts);
 	{
@@ -36,12 +37,24 @@ void Sandbox2D::OnUpdate(Cngine::Timestep ts)
 		Cngine::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Cngine::RenderCommand::Clear();
 	}
+	
 	{
 		CG_PROFILE_SCOPE("Renderer Draw");
 		Cngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
 		Cngine::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.8f, 0.8f }, { 0.8f, 0.2f, 0.3f, 1.0f });
 		Cngine::Renderer2D::DrawQuad({ 0.5f, -0.5f }, { 0.5f, 0.75f }, m_SquareColor);
-		Cngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
+		Cngine::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 20.0f, 20.0f }, m_CheckerboardTexture,10.0f);
+		Cngine::Renderer2D::EndScene();
+
+		Cngine::Renderer2D::BeginScene(m_CameraController.GetCamera());
+		for (float y = -5.0f; y < 5.0f; y += 0.5f)
+		{
+			for (float x = -5.0f; x < 5.0f; x += 0.5f)
+			{
+				glm::vec4 color = { (x + 5.0f) / 10.0f, 0.4f, (y + 5.0f) / 10.0f, 0.7f };
+				Cngine::Renderer2D::DrawQuad({ x, y }, { 0.45f, 0.45f }, color);
+			}
+		}
 		Cngine::Renderer2D::EndScene();
 	}
 }

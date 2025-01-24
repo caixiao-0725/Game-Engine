@@ -9,10 +9,13 @@
 #include "cngine/Core/Timestep.h"
 #include "cngine/Core/input.h"
 #include "cngine/Core/KeyCodes.h"
-#include "cngine/Core/MouseButtonCodes.h"
+#include "cngine/Core/MouseCodes.h"
 #include "cngine/Renderer/OrthographicCameraController.h"
 
 #include "cngine/ImGui/ImGuiLayer.h"
+#include "cngine/Scene/Scene.h"
+#include "cngine/Scene/Entity.h"
+#include "cngine/Scene/Components.h"
 #include "cngine/Debug/Instrumentor.h"
 
 // ---Renderer------------------------
