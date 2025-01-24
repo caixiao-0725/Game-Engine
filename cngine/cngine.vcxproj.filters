@@ -192,6 +192,9 @@
     <ClInclude Include="src\cngine\Scene\SceneCamera.h">
       <Filter>src\cngine\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\cngine\Scene\ScriptableEntity.h">
+      <Filter>src\cngine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="thirdparty\glm\glm\common.hpp">
       <Filter>thirdparty\glm\glm</Filter>
     </ClInclude>

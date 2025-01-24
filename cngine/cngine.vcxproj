@@ -190,6 +190,7 @@
     <ClInclude Include="src\cngine\Scene\Entity.h" />
     <ClInclude Include="src\cngine\Scene\Scene.h" />
     <ClInclude Include="src\cngine\Scene\SceneCamera.h" />
+    <ClInclude Include="src\cngine\Scene\ScriptableEntity.h" />
     <ClInclude Include="thirdparty\glm\glm\common.hpp" />
     <ClInclude Include="thirdparty\glm\glm\detail\_features.hpp" />
     <ClInclude Include="thirdparty\glm\glm\detail\_fixes.hpp" />
