@@ -144,6 +144,9 @@
     <ClInclude Include="src\cngine\Renderer\Buffer.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\cngine\Renderer\Camera.h">
+      <Filter>src\cngine\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\cngine\Renderer\Framebuffer.h">
       <Filter>src\cngine\Renderer</Filter>
     </ClInclude>
@@ -184,6 +187,9 @@
       <Filter>src\cngine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\cngine\Scene\Scene.h">
+      <Filter>src\cngine\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cngine\Scene\SceneCamera.h">
       <Filter>src\cngine\Scene</Filter>
     </ClInclude>
     <ClInclude Include="thirdparty\glm\glm\common.hpp">
@@ -1527,6 +1533,9 @@
       <Filter>src\cngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\cngine\Scene\Scene.cpp">
+      <Filter>src\cngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Scene\SceneCamera.cpp">
       <Filter>src\cngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="thirdparty\stb_image\stb_image.cpp">
