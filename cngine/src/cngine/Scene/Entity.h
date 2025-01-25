@@ -12,7 +12,9 @@ namespace Cngine {
 		T& AddComponent(Args&&... args)
 		{
 			CG_CORE_ASSERT(!HasComponent<T>(), "Entity already has component!");
-			return m_Scene->m_Registry.emplace<T>(m_EntityHandle, std::forward<Args>(args)...);
+			T& component = m_Scene->m_Registry.emplace<T>(m_EntityHandle, std::forward<Args>(args)...);
+			m_Scene->OnComponentAdded<T>(*this, component);
+			return component;
 		}
 		template<typename T>
 		T& GetComponent()
@@ -41,6 +43,8 @@ namespace Cngine {
 		{
 			return !(*this == other);
 		}
+		operator entt::entity() const { return m_EntityHandle; }
+
 	private:
 		entt::entity m_EntityHandle{ entt::null };  //从 0 开始的
 		Scene* m_Scene = nullptr;
