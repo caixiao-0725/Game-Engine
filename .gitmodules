@@ -10,9 +10,9 @@
 [submodule "cngine/thirdparty/glm"]
 	path = cngine/thirdparty/glm
 	url = https://github.com/icaven/glm.git
-[submodule "GameEngineLightWeight/vendor/yaml-cpp"]
-	path = GameEngineLightWeight/vendor/yaml-cpp
-	url = https://github.com/TheCherno/yaml-cpp
 [submodule "cngine/thirdparty/yaml-cpp"]
 	path = cngine/thirdparty/yaml-cpp
 	url = https://github.com/TheCherno/yaml-cpp
+[submodule "cngine/thirdparty/ImGuizmo"]
+	path = cngine/thirdparty/ImGuizmo
+	url = https://gitee.com/hang-jingqi/ImGuizmo.git
