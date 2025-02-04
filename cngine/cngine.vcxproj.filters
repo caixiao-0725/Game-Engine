@@ -192,6 +192,9 @@
     <ClInclude Include="src\cngine\Scene\SceneCamera.h">
       <Filter>src\cngine\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\cngine\Scene\SceneSerializer.h">
+      <Filter>src\cngine\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="src\cngine\Scene\ScriptableEntity.h">
       <Filter>src\cngine\Scene</Filter>
     </ClInclude>
@@ -1539,6 +1542,9 @@
       <Filter>src\cngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\cngine\Scene\SceneCamera.cpp">
+      <Filter>src\cngine\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cngine\Scene\SceneSerializer.cpp">
       <Filter>src\cngine\Scene</Filter>
     </ClCompile>
     <ClCompile Include="thirdparty\stb_image\stb_image.cpp">
